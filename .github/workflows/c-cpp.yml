@@ -1,0 +1,93 @@
+#include <stdio.h> 
+#include<string.h> 
+#define TOTAL_STUDENTS 25 
+struct Student { int 
+rollNo; char 
+name[50]; int 
+marksMaths; int 
+marksChemistry; int 
+marksPhysics; int 
+marksBiology; int 
+totalMarks; char 
+grade; 
+ char result[10]; 
+}; 
+void calculateTotalMarks(struct Student *student); 
+void calculateGrade(struct Student *student); 
+int main() { 
+ struct Student students[TOTAL_STUDENTS] = { 
+ 
+ {1, "raj sharma", 85, 75, 90, 80}, 
+ {2, "jarrar khan", 85, 75, 90, 80}, 
+ {3, "varun pathk", 85, 75, 90, 80}, 
+ {4, "kumari bharati", 85, 75, 90, 80}, 
+ {5, "pooja kaushik", 85, 75, 90, 80}, 
+ {6, "shashi kant", 85, 75, 90, 80}, 
+ {7, "dhariy", 85, 75, 90, 80}, 
+ {8, "sarang", 85, 75, 90, 80}, 
+ {9, "purval", 85, 75, 90, 80}, 
+ {10, "shivam", 85, 75, 90, 80}, 
+ {11, "manaswi", 85, 75, 90, 80}, 
+ {12, "shail chaple", 85, 75, 90, 80}, 
+ {13, "harsh buhada", 85, 75, 90, 80}, 
+ {14, "aman singh madan", 85, 75, 90, 80}, 
+ {15, "abhishek pandey", 85, 75, 90, 80}, 
+ {16, "yogesh pareekh", 85, 75, 90, 80}, 
+ {17, "om shahu", 85, 75, 90, 80}, 
+ {18, "parth", 85, 75, 90, 80}, 
+ {19, "atul", 85, 75, 90, 80}, 
+ {20, "himanshu", 85, 75, 90, 80}, 
+ {21, "subod", 85, 75, 90, 80}, 
+ {22, "mudassir khan", 85, 75, 90, 80}, 
+ {23, "charu girhe", 85, 75, 90, 80}, 
+ {24, "mudassir ", 85, 75, 90, 80}, 
+ {25, "Dipanshu mathankar", 85, 75, 90, 80}, 
+ 
+ }; 
+ int rollNumber; 
+ printf("Enter the roll number of the student : "); 
+ scanf("%d", &rollNumber); 
+ if (rollNumber < 1 || rollNumber > TOTAL_STUDENTS) { 
+printf("Invalid roll number!\n"); 
+ return 1; 
+ } 
+ struct Student selectedStudent = students[rollNumber - 1]; 
+calculateTotalMarks(&selectedStudent); 
+ calculateGrade(&selectedStudent); 
+ printf("\nReport Card\n"); 
+ 
+printf("Name: %s\n", selectedStudent.name); 
+ printf("Roll Number: %d\n", selectedStudent.rollNo);
+  printf("Maths: %d\n", selectedStudent.marksMaths);
+printf("Chemistry: %d\n", selectedStudent.marksChemistry); 
+printf("Physics: %d\n", selectedStudent.marksPhysics); 
+printf("Biology: %d\n", selectedStudent.marksBiology); 
+printf("Total Marks: %d\n", selectedStudent.totalMarks); 
+printf("Grade: %c\n", selectedStudent.grade);
+ printf("Result: %s\n", selectedStudent.result); 
+ return 0; 
+} 
+void calculateTotalMarks(struct Student *student) { 
+ student->totalMarks = student->marksMaths + student->marksChemistry + 
+student->marksPhysics + student->marksBiology; 
+} 
+void calculateGrade(struct Student *student) { 
+ float percentage = (float)student->totalMarks / 4.0; 
+ if (percentage >= 90) { 
+student->grade = 'A'; 
+strcpy(student->result, "Pass"); } 
+else if (percentage >= 80) { 
+student->grade = 'B'; 
+strcpy(student->result, "Pass"); } 
+else if (percentage >= 70) { 
+student->grade = 'C'; 
+strcpy(student->result, "Pass"); } 
+else if (percentage >= 60) { 
+student->grade = 'D'; 
+strcpy(student->result, "Pass"); } 
+else if (percentage >= 40) { 
+student->grade = 'E'; 
+strcpy(student->result, "Pass"); 
+ } else { student->grade = 'F'; 
+ strcpy(student->result, "Fail"); 
+ } }
