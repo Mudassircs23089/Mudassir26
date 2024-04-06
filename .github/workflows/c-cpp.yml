@@ -1,15 +1,13 @@
 #include <stdio.h> 
 #include<string.h> 
 #define TOTAL_STUDENTS 25 
-struct Student { int 
-rollNo; char 
-name[50]; int 
-marksMaths; int 
-marksChemistry; int 
-marksPhysics; int 
-marksBiology; int 
-totalMarks; char 
-grade; 
+struct Student { int rollNo; char name[50];
+int marksMaths;
+int marksChemistry;
+int marksPhysics;
+int marksBiology;
+int totalMarks; 
+char grade; 
  char result[10]; 
 }; 
 void calculateTotalMarks(struct Student *student); 
