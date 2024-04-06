@@ -56,15 +56,15 @@ calculateTotalMarks(&selectedStudent);
  calculateGrade(&selectedStudent); 
  printf("\nReport Card\n"); 
  
-printf("Name: %s\n", selectedStudent.name); 
- printf("Roll Number: %d\n", selectedStudent.rollNo);
-  printf("Maths: %d\n", selectedStudent.marksMaths);
-printf("Chemistry: %d\n", selectedStudent.marksChemistry); 
-printf("Physics: %d\n", selectedStudent.marksPhysics); 
-printf("Biology: %d\n", selectedStudent.marksBiology); 
-printf("Total Marks: %d\n", selectedStudent.totalMarks); 
-printf("Grade: %c\n", selectedStudent.grade);
- printf("Result: %s\n", selectedStudent.result); 
+printf("Name:%s\n", selectedStudent.name); 
+ printf("Roll Number:%d\n", selectedStudent.rollNo);
+  printf("Maths:%d\n", selectedStudent.marksMaths);
+printf("Chemistry:%d\n", selectedStudent.marksChemistry); 
+printf("Physics:%d\n", selectedStudent.marksPhysics); 
+printf("Biology:%d\n", selectedStudent.marksBiology); 
+printf("Total Marks:%d\n", selectedStudent.totalMarks); 
+printf("Grade:%c\n", selectedStudent.grade);
+ printf("Result:%s\n", selectedStudent.result); 
  return 0; 
 } 
 void calculateTotalMarks(struct Student *student) { 
