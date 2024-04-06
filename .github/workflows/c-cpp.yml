@@ -45,7 +45,7 @@ int main() {
  
  }; 
  int rollNumber; 
- printf("Enter the roll number of the student : "); 
+ printf("Enter the roll number of the student :"); 
  scanf("%d", &rollNumber); 
  if (rollNumber < 1 || rollNumber > TOTAL_STUDENTS) { 
 printf("Invalid roll number!\n"); 
